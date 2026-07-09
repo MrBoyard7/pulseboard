@@ -1,3 +1,6 @@
+/* eslint-disable react-refresh/only-export-components -- this file intentionally
+   pairs the AuthProvider component with its companion useAuth hook, a standard
+   React context pattern that the fast-refresh rule otherwise flags. */
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
 import { apiClient, clearStoredToken, getStoredToken, setStoredToken } from "@/api/client";
