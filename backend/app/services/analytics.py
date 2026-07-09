@@ -4,6 +4,7 @@ Isolating this math from the route handlers keeps it independently
 testable and reusable (e.g. for a future scheduled report or CSV
 export) without touching the HTTP layer.
 """
+
 from datetime import date
 
 from app.models.enums import BlockerSeverity, ProjectStage, TimelineHealth

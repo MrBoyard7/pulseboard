@@ -1,4 +1,5 @@
 """Enumerations shared by ORM models and Pydantic schemas."""
+
 import enum
 
 

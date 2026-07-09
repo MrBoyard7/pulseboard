@@ -1,4 +1,5 @@
 """Tests for the analytics helpers and dashboard aggregation endpoints."""
+
 from datetime import date, timedelta
 
 from app.models.blocker import Blocker
@@ -51,8 +52,16 @@ def test_dashboard_summary_endpoint_returns_expected_shape(client, admin_user, s
     assert len(body) == 1
     row = body[0]
     for field in (
-        "id", "name", "stage", "owner_name", "budget_total", "budget_spent",
-        "budget_burn_pct", "open_blockers", "critical_blockers", "timeline_health",
+        "id",
+        "name",
+        "stage",
+        "owner_name",
+        "budget_total",
+        "budget_spent",
+        "budget_burn_pct",
+        "open_blockers",
+        "critical_blockers",
+        "timeline_health",
     ):
         assert field in row
 

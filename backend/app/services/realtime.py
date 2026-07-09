@@ -10,6 +10,7 @@ For a multi-instance production deployment, replace the in-process
 so events broadcast across all API replicas, not just the one that
 handled the write.
 """
+
 import json
 from dataclasses import dataclass, field
 

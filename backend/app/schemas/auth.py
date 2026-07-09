@@ -1,4 +1,5 @@
 """Pydantic schemas for the authentication flow."""
+
 from pydantic import BaseModel, EmailStr
 
 

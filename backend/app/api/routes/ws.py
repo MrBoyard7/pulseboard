@@ -4,6 +4,7 @@ The token is passed as a query parameter (`?token=...`) because browser
 WebSocket clients cannot set an Authorization header on the handshake
 request.
 """
+
 from fastapi import APIRouter, Query, WebSocket, WebSocketDisconnect
 from sqlalchemy.orm import Session
 

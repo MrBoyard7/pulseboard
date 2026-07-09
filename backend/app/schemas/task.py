@@ -1,4 +1,5 @@
 """Pydantic schemas for task creation, updates, and API responses."""
+
 from datetime import date
 
 from pydantic import BaseModel, ConfigDict

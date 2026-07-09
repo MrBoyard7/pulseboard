@@ -1,4 +1,5 @@
 """Pydantic schemas for budget entry creation and API responses."""
+
 from datetime import date
 
 from pydantic import BaseModel, ConfigDict, Field

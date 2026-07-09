@@ -1,10 +1,15 @@
 """BudgetEntry model: an individual spend recorded against a project."""
+
 from datetime import date, datetime
+from typing import TYPE_CHECKING
 
 from sqlalchemy import Date, DateTime, ForeignKey, Numeric, String, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.database import Base
+
+if TYPE_CHECKING:
+    from app.models.project import Project
 
 
 class BudgetEntry(Base):

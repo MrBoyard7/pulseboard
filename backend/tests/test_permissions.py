@@ -1,4 +1,5 @@
 """Tests enforcing the role-based access control policy end to end."""
+
 from tests.conftest import auth_headers
 
 
@@ -47,9 +48,7 @@ def test_member_can_report_blocker_but_not_resolve_it(client, member_user, sampl
     assert create_response.status_code == 201
     blocker_id = create_response.json()["id"]
 
-    resolve_response = client.patch(
-        f"/api/blockers/{blocker_id}", json={"resolved": True}, headers=headers
-    )
+    resolve_response = client.patch(f"/api/blockers/{blocker_id}", json={"resolved": True}, headers=headers)
     assert resolve_response.status_code == 403
 
 

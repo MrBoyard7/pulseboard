@@ -1,4 +1,5 @@
 """Password hashing and JSON Web Token helpers."""
+
 from datetime import datetime, timedelta, timezone
 
 from jose import JWTError, jwt

@@ -13,6 +13,7 @@ Policy summary
 - EXECUTIVE: read-only access to portfolio summaries and drill-down
   records. Never permitted to create, update, or delete anything.
 """
+
 from app.models.enums import UserRole
 from app.models.task import Task
 from app.models.user import User

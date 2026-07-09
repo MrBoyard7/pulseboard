@@ -1,4 +1,5 @@
 """Dashboard endpoints: the aggregated views the frontend renders."""
+
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session, joinedload
 
@@ -62,9 +63,9 @@ def portfolio_summary(
 @router.get("/kpis")
 def portfolio_kpis(current_user: CurrentUser, db: Session = Depends(get_db)) -> dict:
     """Return headline portfolio KPIs shown at the top of the dashboard."""
-    projects = db.query(Project).options(
-        joinedload(Project.blockers), joinedload(Project.budget_entries)
-    ).all()
+    projects = (
+        db.query(Project).options(joinedload(Project.blockers), joinedload(Project.budget_entries)).all()
+    )
 
     active = [p for p in projects if p.stage not in (ProjectStage.CLOSED,)]
     delayed = [p for p in projects if timeline_health(p) == TimelineHealth.DELAYED]

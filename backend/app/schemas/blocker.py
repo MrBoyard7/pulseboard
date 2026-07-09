@@ -1,4 +1,5 @@
 """Pydantic schemas for blocker creation, updates, and API responses."""
+
 from datetime import datetime
 
 from pydantic import BaseModel, ConfigDict

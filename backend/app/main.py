@@ -5,6 +5,7 @@ Run locally with:
 
 See docs/DEPLOYMENT.md for containerized and cloud deployment options.
 """
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 

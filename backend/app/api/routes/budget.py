@@ -1,4 +1,5 @@
 """Budget entry endpoints used to track spend against each project."""
+
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
@@ -42,7 +43,9 @@ async def create_budget_entry(
 
 
 @router.delete("/{entry_id}", status_code=status.HTTP_204_NO_CONTENT)
-async def delete_budget_entry(entry_id: int, current_user: CurrentUser, db: Session = Depends(get_db)) -> None:
+async def delete_budget_entry(
+    entry_id: int, current_user: CurrentUser, db: Session = Depends(get_db)
+) -> None:
     """Delete a spend line item. Restricted to project managers (admins)."""
     try:
         require(can_write_budget_entry(current_user))

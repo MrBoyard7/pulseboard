@@ -1,4 +1,5 @@
 """Reusable FastAPI dependencies for authentication and authorization."""
+
 from typing import Annotated
 
 from fastapi import Depends, HTTPException, status
@@ -13,9 +14,7 @@ from app.models.user import User
 # auto_error=False lets us raise 401 (not FastAPI's default 403) when no
 # credentials are supplied at all, keeping 401 for "missing/invalid token"
 # and 403 reserved for "authenticated but wrong role" (see require_roles).
-bearer_scheme = HTTPBearer(
-    auto_error=False, description="Paste the JWT returned by POST /api/auth/login."
-)
+bearer_scheme = HTTPBearer(auto_error=False, description="Paste the JWT returned by POST /api/auth/login.")
 
 
 def get_current_user(

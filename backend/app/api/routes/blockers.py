@@ -1,4 +1,5 @@
 """Blocker endpoints: reporting and resolving project obstacles."""
+
 from datetime import datetime, timezone
 
 from fastapi import APIRouter, Depends, HTTPException, status

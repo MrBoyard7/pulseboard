@@ -1,4 +1,5 @@
 """User management endpoints. Creation and listing are admin-only."""
+
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 

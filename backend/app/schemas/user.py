@@ -1,4 +1,5 @@
 """Pydantic schemas for user creation, updates, and API responses."""
+
 from pydantic import BaseModel, ConfigDict, EmailStr
 
 from app.models.enums import UserRole

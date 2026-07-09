@@ -1,11 +1,10 @@
 """Tests for the login flow and token-based identity resolution."""
+
 from tests.conftest import auth_headers
 
 
 def test_login_succeeds_with_valid_credentials(client, admin_user):
-    response = client.post(
-        "/api/auth/login", json={"email": admin_user.email, "password": "password123"}
-    )
+    response = client.post("/api/auth/login", json={"email": admin_user.email, "password": "password123"})
     assert response.status_code == 200
     body = response.json()
     assert "access_token" in body
@@ -13,9 +12,7 @@ def test_login_succeeds_with_valid_credentials(client, admin_user):
 
 
 def test_login_fails_with_wrong_password(client, admin_user):
-    response = client.post(
-        "/api/auth/login", json={"email": admin_user.email, "password": "wrong-password"}
-    )
+    response = client.post("/api/auth/login", json={"email": admin_user.email, "password": "wrong-password"})
     assert response.status_code == 401
 
 

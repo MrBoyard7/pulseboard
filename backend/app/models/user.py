@@ -1,11 +1,18 @@
 """User model backing authentication and role-based authorization."""
+
 from datetime import datetime
+from typing import TYPE_CHECKING
 
 from sqlalchemy import DateTime, Enum, ForeignKey, String, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.database import Base
 from app.models.enums import UserRole
+
+if TYPE_CHECKING:
+    from app.models.project import Project
+    from app.models.task import Task
+    from app.models.team import Team
 
 
 class User(Base):

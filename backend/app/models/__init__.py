@@ -5,6 +5,7 @@ sees all classes and can resolve string-based relationship references
 (e.g. `Mapped["Project"]`) regardless of import order elsewhere in the
 application.
 """
+
 from app.models.blocker import Blocker
 from app.models.budget_entry import BudgetEntry
 from app.models.project import Project

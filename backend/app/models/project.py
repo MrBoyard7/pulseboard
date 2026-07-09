@@ -1,11 +1,20 @@
 """Project model: the central entity tracked from kickoff to close-out."""
+
 from datetime import date, datetime
+from typing import TYPE_CHECKING
 
 from sqlalchemy import Date, DateTime, Enum, ForeignKey, Numeric, String, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.database import Base
 from app.models.enums import ProjectStage
+
+if TYPE_CHECKING:
+    from app.models.blocker import Blocker
+    from app.models.budget_entry import BudgetEntry
+    from app.models.task import Task
+    from app.models.team import Team
+    from app.models.user import User
 
 
 class Project(Base):

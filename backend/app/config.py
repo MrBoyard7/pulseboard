@@ -4,6 +4,7 @@ Using pydantic's BaseSettings keeps configuration validated, typed, and
 easy to override per environment (local, staging, production) without
 touching application code.
 """
+
 from functools import lru_cache
 
 from pydantic_settings import BaseSettings, SettingsConfigDict

@@ -8,6 +8,7 @@ immediately after a fresh install.
 Usage:
     python -m scripts.seed_data
 """
+
 import random
 from datetime import date, timedelta
 
@@ -26,22 +27,66 @@ random.seed(42)  # deterministic output so re-running produces the same demo dat
 TEAM_NAMES = ["Platform", "Growth", "Data & Analytics", "Customer Success", "Mobile"]
 
 FIRST_NAMES = [
-    "Amara", "Liam", "Sofia", "Noah", "Yuki", "Elena", "Kwame", "Maria", "Ravi", "Chloe",
-    "Diego", "Fatima", "Hana", "Lucas", "Nadia", "Omar", "Priya", "Sven", "Talia", "Victor",
+    "Amara",
+    "Liam",
+    "Sofia",
+    "Noah",
+    "Yuki",
+    "Elena",
+    "Kwame",
+    "Maria",
+    "Ravi",
+    "Chloe",
+    "Diego",
+    "Fatima",
+    "Hana",
+    "Lucas",
+    "Nadia",
+    "Omar",
+    "Priya",
+    "Sven",
+    "Talia",
+    "Victor",
 ]
 LAST_NAMES = [
-    "Nguyen", "Garcia", "Okafor", "Dubois", "Andersson", "Kowalski", "Silva", "Tanaka",
-    "Haddad", "Petrov", "Rossi", "Kim", "Larsen", "Mensah", "Fischer",
+    "Nguyen",
+    "Garcia",
+    "Okafor",
+    "Dubois",
+    "Andersson",
+    "Kowalski",
+    "Silva",
+    "Tanaka",
+    "Haddad",
+    "Petrov",
+    "Rossi",
+    "Kim",
+    "Larsen",
+    "Mensah",
+    "Fischer",
 ]
 
 PROJECT_THEMES = [
-    "Checkout Redesign", "Data Warehouse Migration", "Mobile Onboarding Revamp",
-    "Customer Portal", "Billing Platform Upgrade", "Search Relevance Overhaul",
-    "Fraud Detection Engine", "Internal Analytics Hub", "API Gateway Modernization",
-    "Localization Rollout", "Notification System", "Loyalty Program Launch",
-    "Accessibility Audit", "Performance Optimization", "Vendor Integration",
-    "Support Ticketing Revamp", "Marketing Site Relaunch", "Inventory Sync Service",
-    "Identity & Access Overhaul", "Reporting Suite",
+    "Checkout Redesign",
+    "Data Warehouse Migration",
+    "Mobile Onboarding Revamp",
+    "Customer Portal",
+    "Billing Platform Upgrade",
+    "Search Relevance Overhaul",
+    "Fraud Detection Engine",
+    "Internal Analytics Hub",
+    "API Gateway Modernization",
+    "Localization Rollout",
+    "Notification System",
+    "Loyalty Program Launch",
+    "Accessibility Audit",
+    "Performance Optimization",
+    "Vendor Integration",
+    "Support Ticketing Revamp",
+    "Marketing Site Relaunch",
+    "Inventory Sync Service",
+    "Identity & Access Overhaul",
+    "Reporting Suite",
 ]
 
 BLOCKER_TEMPLATES = [
@@ -84,9 +129,7 @@ def seed() -> None:
         ]
         used_emails = {"admin@pulseboard.dev"}
         for _ in range(14):
-            role = random.choices(
-                [UserRole.MEMBER, UserRole.EXECUTIVE], weights=[0.8, 0.2], k=1
-            )[0]
+            role = random.choices([UserRole.MEMBER, UserRole.EXECUTIVE], weights=[0.8, 0.2], k=1)[0]
             while True:
                 name = random_name()
                 email = f"{name.lower().replace(' ', '.')}@pulseboard.dev"
@@ -151,8 +194,14 @@ def seed() -> None:
                     BudgetEntry(
                         project_id=project.id,
                         label=random.choice(
-                            ["Contractor invoice", "Cloud infrastructure", "Software license",
-                             "Vendor services", "Equipment", "Travel"]
+                            [
+                                "Contractor invoice",
+                                "Cloud infrastructure",
+                                "Software license",
+                                "Vendor services",
+                                "Equipment",
+                                "Travel",
+                            ]
                         ),
                         amount=amount,
                         incurred_on=project.start_date

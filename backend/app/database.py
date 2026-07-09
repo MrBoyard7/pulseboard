@@ -3,6 +3,7 @@
 Exposes a `get_db` FastAPI dependency that yields a scoped SQLAlchemy
 session per request and guarantees it is closed afterwards.
 """
+
 from collections.abc import Generator
 
 from sqlalchemy import create_engine

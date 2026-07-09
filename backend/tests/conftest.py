@@ -5,6 +5,7 @@ the suite is fast and has zero external dependencies in CI. SQLite is
 close enough to Postgres for our ORM usage; anything Postgres-specific
 would need a dedicated integration test against a real instance.
 """
+
 from datetime import date, timedelta
 
 import pytest
